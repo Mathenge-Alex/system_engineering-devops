@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -A1p | LC_COLLATE=C sort -k1.1, 1.1d -k2
+ls -A1 | LC_ALL=C sort -d -t'.' -k1,1 -k2n -k3n-k4n -k5n -k6n | sed -e 's/,$/,/' -e 's/\/$/,/' | tr -d '\n' && echo
