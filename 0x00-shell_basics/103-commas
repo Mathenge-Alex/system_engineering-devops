@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -A1p | LC_COLLATE=C sort -k1.1, 1.1d -k2
