@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -A1 | LC_ALL=C sort -d -t'.' -k1,1 -k2n -k3n-k4n -k5n -k6n | sed -e 's/,$/,/' -e 's/\/$/,/' | tr -d '\n' && echo
+ls -apm | sort -d
