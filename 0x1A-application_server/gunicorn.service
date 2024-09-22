@@ -1,0 +1,17 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/AirBnB_clone_v4
+ExecStart = /usr/bin/gunicorn \
+	   --access-logfile - \
+           --workers 3 \
+           --bind unix:/run/gunicorn.sock \
+           web_dynamic.2-hbnb:app
+
+[Install]
+WantedBy=multi-user.target
